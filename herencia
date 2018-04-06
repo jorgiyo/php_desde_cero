@@ -1,0 +1,30 @@
+<?php
+//HERENCIA.php
+  class serVivo{
+    public function respirar(){
+      echo "<br />Estoy respirando.";
+      $this->miMetodo();
+    }
+    private function miMetodo(){
+      echo "<br />Solo desde esta clase";
+      
+    }
+    protected function metodoCompartido(){
+      echo "<br />Es un método compartido";
+    }
+  }
+
+  class serHumano extends serVivo{
+    public function razonar(){
+      echo "<br />Yo estoy razonando";
+      $this->respirar();
+      $this->metodoCompartido();
+    }
+  }
+
+//$objetoSerVivo=new serVivo();
+//$objetoSerVivo->respirar();
+
+$objetoSerHumano= new serHumano();
+$objetoSerHumano->razonar();
+//$objetoSerHumano->respirar();
