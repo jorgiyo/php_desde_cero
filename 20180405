@@ -1,0 +1,38 @@
+<?php
+
+  class Padre{
+    public function metodoPadre(){
+      echo "<br />Desde el padre";
+    }
+  }
+
+   class Hijo extends Padre{
+     public function metodoPadre(){
+       echo "<br />Desde el hijo";
+     }
+     public function otroMetodo(){
+       parent::metodoPadre();
+     }
+   }
+
+//$objeto1=new hijo();
+//$objeto1->metodoPadre();
+//$objeto1->otroMetodo();
+
+class otraClase{
+  public static function metodoSinObjeto(){
+    echo "Sin objeto";
+  }
+}
+
+//otraClase::metodoSinObjeto();
+
+class operacionesAritmeticas{
+  public function suma($valorUno=0,$valorDos=0){
+    $resultado=$valorUno + $valorDos;
+    return $resultado;
+  }
+}
+
+$objetoOperaciones=new operacionesAritmeticas();
+echo $objetoOperaciones->suma();
