@@ -1,0 +1,31 @@
+<?php
+
+class operacionesAritmeticas{
+  public function arreglo(){
+    $arreglo1=array("valor1","valor2","valor3","valor4");
+    //echo arreglo[4]; LAS POSICIONES EMPIEZAN EN 0, LA MAYOR ES 3
+    $arreglo2=array(1=>"v1",2=>"v2",3=>"v3",4=>"v4");
+    //echo arreglo[0]; NO EXISTE LA POSICION 0
+    $arreglo3[0]="v0";
+    $arreglo3[4]="v4";
+    //ESTE ARRAY SOLO TIENE DOS POSICIONES, LA 0 Y LA 4
+    $arreglo4=array("pos1"=>"Jorge","pos2"=>"Rakel","pos3"=>"Maialen","pos4"=>"Iker");
+    echo $arreglo4["pos3"];
+  }
+  
+  public function suma($datosR){
+    $resultado=$datosR[0]+$datosR[1];
+    return $resultado;
+  }
+  
+  public function resta($valorUno,$valorDos,$valorTres,$valorCuatro,$valorCinco){
+    $resultado=$valorUno-$valorDos-$valorTres-$valorCuatro-$valorCinco;
+    return $resultado;
+  }
+  
+}
+$datos=array(1,2,3,4);
+
+$objeto=new operacionesAritmeticas();
+$objeto->arreglo();
+//echo "La suma es: ".$objeto->suma($datos);
