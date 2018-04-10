@@ -1,0 +1,43 @@
+<?php
+
+  class Padre{
+    public function metodoPadre(){
+      echo "<br />Desde el padre";
+    }
+  }
+
+   class Hijo extends Padre{
+     public function metodoPadre(){
+       echo "<br />Desde el hijo";
+     }
+     public function otroMetodo(){
+       parent::metodoPadre();
+     }
+   }
+
+//$objeto1=new hijo();
+//$objeto1->metodoPadre();
+//$objeto1->otroMetodo();
+
+class otraClase{
+  public static function metodoSinObjeto(){
+    echo "Sin objeto";
+  }
+}
+
+//otraClase::metodoSinObjeto();
+
+class operacionesAritmeticas{
+  public function suma($valorUno,$valorDos,$valorTres,$valorCuatro,$valorCinco){
+    $resultado=$valorUno + $valorDos-$valorTres+$valorCuatro+$valorCinco;
+    return $resultado;
+  }
+  public function resta($valorUno,$valorDos,$valorTres,$valorCuatro,$valorCinco){
+    $resultado=$valorUno-$valorDos-$valorTres-$valorCuatro-$valorCinco;
+    return $resultado;
+  }
+}
+
+$objetoOperaciones=new operacionesAritmeticas();
+echo "Suma: ".$objetoOperaciones->suma(1,2,3,4,5);
+echo "<br />Resta: ". $objetoOperaciones->resta(5,4,3,2,1);
