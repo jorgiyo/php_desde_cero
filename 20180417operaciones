@@ -1,0 +1,24 @@
+<?php
+
+class operacionesAritmeticas{
+   
+  public function operacion($datosR,$operacion='suma'){
+    if ($operacion=='suma'){
+      $resultado=$datosR[0]+$datosR[1];
+    }
+    else if ($operacion=='resta'){
+      $resultado=$datosR[0]-$datosR[1]-$datosR[2]-$datosR[3];
+    }
+    else {
+      $resultado="Debes escribir suma o resta y no $operacion";
+    }
+    return $resultado;
+  }
+  
+}
+$datos=array(1,2,3,4);
+
+$objeto=new operacionesAritmeticas();
+//$objeto->arreglo();
+//echo "La suma es: ".$objeto->suma($datos);
+echo "Operación: ".$objeto->operacion($datos,'suma');
