@@ -21,7 +21,14 @@ class operacionesAritmeticas{
       case 'suma':
        
       for ( $a=0; $a<$numElems; $a++ ){
+        echo $resultado;
+        echo "+";
+        echo $datosR[$a];
+        echo "=";
+        echo $resultado+$datosR[$a];
+        echo '<br />';
         $resultado += $datosR[$a];
+        
        }
       break;
       case 'resta':
@@ -57,4 +64,4 @@ $datos=array(1,2,3,4,5);
 //$objeto=new operacionesAritmeticas();
 //$objeto->arreglo();
 //echo "La suma es: ".$objeto->suma($datos);
-echo "Operación: ".$objeto->operacion($datos,'multiplica');
+echo "Operación: ".$objeto->operacion($datos,'suma');
