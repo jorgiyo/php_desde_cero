@@ -1,0 +1,90 @@
+<?php
+
+class operacionesAritmeticas{
+ /* public function arreglo(){
+    $arreglo1=array("valor1","valor2","valor3","valor4");
+    //echo arreglo[4]; LAS POSICIONES EMPIEZAN EN 0, LA MAYOR ES 3
+    $arreglo2=array(1=>"v1",2=>"v2",3=>"v3",4=>"v4");
+    //echo arreglo[0]; NO EXISTE LA POSICION 0
+    $arreglo3[0]="v0";
+    $arreglo3[4]="v4";
+    //ESTE ARRAY SOLO TIENE DOS POSICIONES, LA 0 Y LA 4
+    $arreglo4=array("pos1"=>"Jorge","pos2"=>"Rakel","pos3"=>"Maialen","pos4"=>"Iker");
+    echo $arreglo4["pos3"];
+  }*/
+  public function demo(){
+    $inicio=1;
+    while ($inicio<5){
+      echo "Ciclo: ".$inicio."<br />";
+      $inicio++;
+    }
+  }
+  public function demo2(){
+    $inicio=1;
+          do
+          {
+            echo "Ciclo: ".$inicio."<br />";
+            $inicio++;
+          } 
+          while ($inicio<5);
+  }
+  
+  public function operacion($datosR,$operacion='suma'){
+    $numElems=count($datosR);
+    $resultado=0;
+    switch ($operacion)
+    {
+      case 'suma':
+       
+      foreach ($datosR as $indice=>$valor){
+        echo $resultado;
+        echo "+";
+        echo $valor;
+        echo "=";
+        echo $resultado+$valor;
+        echo '<br />';
+        $resultado += $valor;
+        
+       }
+      break;
+      case 'resta':
+      foreach ($datosR as $indice=>$valor){
+        echo $resultado;
+        echo "-";
+        echo $valor;
+        echo "=";
+        echo $resultado+$valor;
+        echo '<br />';
+        $resultado -= $valor;
+       }
+      break;
+        case 'multiplica':
+        $resultado=$datosR[0]; //hay que inicializar $resultado porque si lo dejamos a cero el resultado final será 0
+      for ( $a=0; $a<$numElems; $a++ ){
+        $resultado *= $datosR[$a];
+       }
+      break;
+    }
+    
+    return $resultado;
+  }
+  
+  
+ function if_reducido(){
+   $edad=18;
+   $entra=($edad>=18)?"Entra":"No entra";
+   return $entra;
+ } 
+}
+
+
+
+$objeto=new operacionesAritmeticas();
+//echo "Sala de fiestas: ".$objeto->if_reducido();
+$datos=array("uno"=>5,"dos"=>2,"tres"=>3,"cuatro"=>4,"cinco"=>5);
+
+//$objeto=new operacionesAritmeticas();
+//$objeto->arreglo();
+//echo "La suma es: ".$objeto->suma($datos);
+echo "Operación: ".$objeto->operacion($datos,'resta');
+echo $objeto->demo2();
