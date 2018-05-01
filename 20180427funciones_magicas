@@ -1,0 +1,37 @@
+<?php
+
+class operacionesAritmeticas{
+ //al método mágico __construct se le puede pasar varialbles
+  public function __construct($valor=0){
+    echo "Método mágico __construc($valor)<br />";
+  }
+//un obleto termina al final del código o asignandole el valor null
+  public function __destruct(){
+    echo "Adiós objeto<br />";
+  }
+  public function __call($nombreMetodo, $argunentos){
+    echo "Estas llamando a $nombreMetodo y no existe<br />";
+    foreach ($argunentos as $datos){
+      echo $datos."<br />";
+        }
+    
+    }
+  public function __get($nombrePropiedad){
+      echo "La propiedad $nombrePropiedad no está definida<br />";
+  }
+  
+  public function __set($nombre,$valor){
+    echo "Nombre: $nombre y Valor; $valor.<br />";
+  }
+  
+}
+  
+  
+
+
+$objeto=new operacionesAritmeticas(1);
+//$objeto=null;
+//echo "más código<br />";
+$objeto->demo(1,2,3);
+$objeto->edad;
+$objeto->edad=45;
