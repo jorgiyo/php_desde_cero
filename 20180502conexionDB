@@ -1,0 +1,26 @@
+<?php
+
+$server="localhost";
+$usuario="root";
+$pass="";
+$nombreBase="curso_php";
+
+try {
+  
+$objetoPDO=new PDO("mysql:host=$server;dbname=$nombreBase",$usuario,$pass);
+}
+catch (PDOException $zzz){
+  echo "ERROR<br />";
+  echo $zzz->getMessage();
+  exit();
+}
+echo "Mi sistema.";
+
+/*$objetoMysqli=new mysqli($server,$usuario,$pass,$nombreBase);
+
+
+var_dump($objetoMysqli);
+
+echo "<br />".$objetoMysqli->host_info;
+echo "<br />Error número: ".$objetoMysqli->errno;
+*/
