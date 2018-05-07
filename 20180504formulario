@@ -1,0 +1,21 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Formulario para enviar datos a PHP</title>
+    <body>
+      <div>
+        Esto es un formulario para PHP
+      </div>
+      <form action="recibir.php" method="GET">
+        Nombre <input type="text" name="nombreFormulario" id="nombreformulario">
+        <br />
+        <input type="submit" value="Enviar">
+        
+      </form>
+    </body>
+  </head>
+</html>
